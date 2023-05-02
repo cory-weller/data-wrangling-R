@@ -1,5 +1,10 @@
-# intro-R-datatable
+# Data wrangling in R with `data.table`
+
+[Getting Started](00_getting_started/README.md)
+
 # Setup
+
+
 1. Download this repository. On linux, run:
     ```
     git clone https://github.com/cory-weller/intro-R-datatable
