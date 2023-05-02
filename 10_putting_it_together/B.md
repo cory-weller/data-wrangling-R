@@ -1,0 +1,1 @@
+# exclude anything that isn't a SNP

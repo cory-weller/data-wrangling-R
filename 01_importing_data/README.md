@@ -1,34 +1,5 @@
-# Importing Data
+# Importing Text
 
-## Background
+Here, we refer to the import of text data. This is in contrast to more complex objects that have hierarchical structure or must be converted to text.
 
-## Input Data Types
-
-## The import workhorse, `fread()`
-Simply superior to `read.csv` in speed and 'smartness'
-
-## Working with Excel files is frustrating
-
-```
-library(openxlsx)
-
-openxlsx::read.xlsx(xlsxfilename, sheetName_OR_sheetIndex)
-```
-
-
-<details><summary>Click to expand</summary>
-
-
-
-</details>
-
-
-<details><summary>Click to expand</summary>
-
-
-
-</details>
-
----
-[HOME](/README.md) |
-[NEXT](/01_importing_data/A.md)
+Typically, if you can read it, it's text.

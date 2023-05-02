@@ -1,0 +1,1 @@
+# convert missing genotypes to NA
