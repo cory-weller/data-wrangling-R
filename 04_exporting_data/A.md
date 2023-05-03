@@ -1,6 +1,5 @@
 # Writing data tables to text with `fwrite`
 
-
 The function `fwrite` is the workhorse of saving any table as text output such as tab-separated values (`.tsv`) or comma-separated values (`.csv`). It's essentially the counterpart to `fread` when it comes to exporting data.
 
 ```
