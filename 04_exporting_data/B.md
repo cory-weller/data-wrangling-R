@@ -1,12 +1,12 @@
 
-# Exporting other 
+# Exporting things *other* than tables
 
 ## Writing vectors to text file
 
 `writeLines(con='filename.txt')` saves a vector. By default, items are separated by a newline, i.e. `sep='\n'`.
 You can separate by other characters if desired by changing the value of `sep=`:
 
-```
+```R
 my_vector <- c(letters,LETTERS)
 # Write my_vector to file, one item per line
 writeLines(my_vector, con='my_vector.txt')
@@ -15,46 +15,50 @@ writeLines(my_vector, con='my_vector.txt')
 writeLines(my_vector, con='comma_separated.txt', sep=',')
 ```
 
+Check the contents of the file to confirm it worked as expected.
 
-## Saving (and loading) R objects as a file
+---
 
-`saveRDS()` can write an entire R object to the disk for later use. It's a compressed binary format (not readable as text)
+## Saving  R objects as a file
 
-`save()` can write individual objects to disk, to be imported with `load()`
-A specific instance of `save()` is `save.image()` which writes the entire workspace to disk.
+We already mentioned `saveRDS()` and `save()`. Look back [here](/01_importing_data/B.md) if desired.
 
-## Try
-```
-# Generate vector of 100 random decimals within range (0,1)
+---
+
+## On your own
+First, generate a vector of 100 random decimals within range (0,1). 
+```R
 my_numbers <- runif(100)
-
-# Try writing my_numbers with writeLines. What happens?
-writeLines(my_numbers, con='my_numbers.txt')
 ```
+Then use the vector `my_numbers` to answer the following:
 
-<details><summary>Next</summary>
 
+Try writing my_numbers with writeLines. What happens?
+
+<details><summary>Answer</summary>
+ 
 Because `writeLines` only accepts character vectors, it gives an error:
 ```R
+writeLines(my_numbers, con='my_numbers.txt')
+
 Error in writeLines(my_numbers, con = "my_numbers.txt") : 
   can only write character objects
 ```
 
+</details>
+
+---
 How might you get around this limitation to write `my_numbers` to a file?
 
- <details><summary>Next</summary>
+<details><summary>Answer</summary>
  
  We first have to convert the numeric vector to character with `as.character`
  ```R
  writeLines(as.character(my_numbers), con='my_numbers.txt')
- ``` 
- 
- </details>
-
+ ```  
 
 </details>
 
-
-See [the earlier page](/01_importing_data/B.md)
+---
 
 [PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
