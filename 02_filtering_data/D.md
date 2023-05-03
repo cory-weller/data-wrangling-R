@@ -69,7 +69,7 @@ This actually gives us a simpler method of filtering `bed` on the `CHR` column. 
 
 ```R
 filter_by_in <- bed[CHR %in% desired_chrs]    # previous method
-filter_by_like <- bed[CHR %like% 'chr']         # same result
+filter_by_like <- bed[CHR %like% 'chr']       # same result?
 ```
 
 Do these provide equivalent results? We might suspect so based on row numbers. But we can check with the function `identical`:
@@ -80,6 +80,8 @@ identical(filter_by_in, filter_by_like)
 
 
 ---
+
+[PREV](B.md) | [HOME](/README.md) | [NEXT](/03_organizing_columns/README.md)
 
 
 [^1]: `select=(1:4)` tells `fread` to only import columns 1, 2, 3 and 4.

@@ -27,4 +27,4 @@ dat2 <- dat[! 12:20]    # Save subset as new variable
 
 [HOME](/README.md) | [NEXT](B.md)
 
-[^1] And columns as in `j`, also equivalent to matrix notation.
+[^1]: And columns as in `j`, also equivalent to matrix notation.
