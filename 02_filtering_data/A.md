@@ -24,16 +24,6 @@ dat2 <- dat[! 12:20]    # Save subset as new variable
 ```
 
 
----
-## On your own
-
-Q
-
-<details><summary>Answer</summary>
- 
-Answer
- 
-</details>
 
 ---
 

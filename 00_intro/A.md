@@ -12,9 +12,6 @@ git clone https://github.com/cory-weller/data-wrangling-R.git
 cd data-wrangling-R
 ```
 
-If you are already comfortable doing that on your own, continue to the [NEXT](B.md) section.
-
-*Note: If you are working on a local Linux machine, I assume you already know what you're doing and can get R started on your own*
 
 ---
 
@@ -26,7 +23,7 @@ While `Rstudio` can be nice, it adds an additional layer of abstraction which ca
 ---
 
 ## If you don't have Biowulf access
-You should be able to follow along and run the commands within this tutorial in any `R` or `Rstudio` setting so long as the required packages are installed. I'm working in `R` version `4.2.2` with the most recent version of `data.table` and `foreach`.
+You should be able to follow along and run the commands within this tutorial in any `R` or `Rstudio` setting so long as the required packages are installed. I'm working in `R` version `4.2.2` with the most recent version of `data.table` and `foreach`. You will need to manually retrieve this repository and make sure your `Rstudio` working directory is set to the top level of said repository.
 
 ---
 
