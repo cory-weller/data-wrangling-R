@@ -70,12 +70,14 @@ This actually gives us a simpler method of filtering `bed` on the `CHR` column. 
 ```R
 filter_by_in <- bed[CHR %in% desired_chrs]    # previous method
 filter_by_like <- bed[CHR %like% 'chr']       # same result?
+filter_by_like_regex <- bed[CHR %like% '^chr[0-9]?|[XY]']  # more specific, using regular expressions
 ```
 
 Do these provide equivalent results? We might suspect so based on row numbers. But we can check with the function `identical`:
 
 ```R
 identical(filter_by_in, filter_by_like)
+identical(filter_by_in, filter_by_like_regex)
 ```
 
 
