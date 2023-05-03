@@ -38,8 +38,8 @@
 * [outer joins](05_merging_data/B.md)
 
 ### [Transforming between long and wide](06_transforming_long_and_wide/README.md)
-* [melt](06_transforming_long_and_wide/A.md)
-* [dcast](06_transforming_long_and_wide/B.md)
+* [to 'long' format](06_transforming_long_and_wide/A.md)
+* [to 'wide' format](06_transforming_long_and_wide/B.md)
 
 ### [Aggregation by groups](07_aggregation_by_groups/README.md)
 * [Basic aggregation](07_aggregation_by_groups/A.md)
@@ -51,6 +51,8 @@
 * [iterating over data subsets](08_iterating_with_foreach/C.md)
 * [sliding window analyses](08_iterating_with_foreach/D.md)
 
-### [Putting it together](09_putting_it_together/README.md)
+---
+
+## [Putting everything together](09_putting_it_together/README.md)
 
 ---

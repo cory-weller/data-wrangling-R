@@ -44,4 +44,4 @@ library(foreach)        # Load foreach
 
 ---
 
-[HOME](/README.md) | [NEXT](B.md)
+[PREV](/00_intro/README.md) | [HOME](/README.md) | [NEXT](B.md)
