@@ -10,4 +10,4 @@ For best practices, work with plain text if possible. Excel can save files as ta
 
 ---
 
-[NEXT](A.md)
+[HOME](/README.md) | [NEXT](A.md)

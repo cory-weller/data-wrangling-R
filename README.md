@@ -32,7 +32,7 @@
 * [other files](01_importing_data/C.md)
 
 [02 Filtering data by row](02_filtering_data/README.md)
-* [working in `i`](02_filtering_data/A.md)
+* [`data.table` notation in `i`](02_filtering_data/A.md)
 * [filtering by conditions](02_filtering_data/B.md)
 * [chaining filters](02_filtering_data/C.md)
 * [useful filter functions](02_filtering_data/D.md)
