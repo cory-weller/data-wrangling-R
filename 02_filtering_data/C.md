@@ -9,19 +9,31 @@ Still working with the example `data.table` from before:
 dat <- data.table('N'=1:26, 'lower'=letters, 'upper'=LETTERS)
 ```
 
-Try the following commands and see what happens:
+Run the following command and see what happens:
 ```R
 dat[N < 10][N > 3]
 ```
 
 
-Q: Convert the following AND command into two commands chained together to yield the same result.
+---
+## On your own
+
+Convert the following `AND` command into chained format. Both commands should yield the same result.
 ```R
 dat[N > 5 & N < 20]
 ```
 
-A: execute `dat[N > 5][N < 20]`
+<details><summary>Answer</summary>
+ 
+```R
+dat[N >  5][N < 20]
+dat[N < 20][N >  5]      # equivalent
+```
+
+</details>
+
 
 ---
 
 [PREV](B.md) | [HOME](/README.md) | [NEXT](D.md)
+

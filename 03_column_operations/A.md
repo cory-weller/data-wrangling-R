@@ -1,5 +1,13 @@
 # Organizing columns
 
+Before going forward, let's re-initialize the `bed` object.
+
+```R
+bed <- fread('transcripts.bed',
+             select=1:4,
+             col.names=c('CHR','start','stop','ENSEMBL'))
+```
+
 ## Changing column names
 When we look at the names of the columns in the `bed` object:
 ```R

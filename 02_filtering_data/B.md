@@ -31,14 +31,34 @@ Additionally, the greater/less than (and their or-equal-to counterparts) `>`, `<
 dat[lower == 'a' | N > 20]
 ```
 
-Q. How would you use a conditional filter to subset only rows with odd values of `N`?
+---
+## On your own
 
-A. execute `dat[N %% 2 != 0]`
+How would you use a conditional filter to subset only rows with odd values of `N`?[^1]
 
-Q. How would you subset only rows with `upper` in the set `N`, `I` and `H` ?
+<details><summary>Answer</summary>
+ 
+```R
+dat[N %% 2 != 0]
+```
 
-A. execute `dat[upper == 'N' | upper == 'I' | upper == 'H']`
+</details>
+
+
+
+---
+How would you subset only rows with `upper` in the set `N`, `I` and `H` ?
+<details><summary>Answer</summary>
+
+```R
+dat[upper == 'N' | upper == 'I' | upper == 'H']
+```
+
+</details>
 
 ---
 
 [PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
+
+
+[^1]: Recall the `remainder` function `%%`

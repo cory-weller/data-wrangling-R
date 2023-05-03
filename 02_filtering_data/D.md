@@ -82,8 +82,34 @@ identical(filter_by_in, filter_by_like_regex)
 
 
 ---
+## On your own
 
-[PREV](B.md) | [HOME](/README.md) | [NEXT](/03_organizing_columns/README.md)
+Using one of these convenience functions, how might you select only rows pertaining to the sex chromosomes?
+<details><summary>Answer</summary>
+ 
+```R
+bed[CHR %in% c('chrX','chrY')]
+```
+
+</details>
+
+---
+
+How could you check whether all values in `ENSEMBL` start with the string `'ENSG'`?
+<details><summary>Answer</summary>
+ 
+```R
+bed[! ENSEMBL %like% 'ENSG']        # returns empty data.table
+bed[ENSEMBL %like% 'ENSG']          # returns all rows from bed
+```
+
+</details>
+
+
+
+---
+
+[PREV](B.md) | [HOME](/README.md) | [NEXT](/03_column_operations/README.md)
 
 
 [^1]: `select=(1:4)` tells `fread` to only import columns 1, 2, 3 and 4.
