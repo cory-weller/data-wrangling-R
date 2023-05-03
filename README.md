@@ -1,4 +1,4 @@
-# Data wrangling in R with `data.table`
+# Data wrangling in R
 
 
 ## Part 1
@@ -53,68 +53,4 @@
 
 ### [Putting it together](09_putting_it_together/README.md)
 
-
-
-## Adding columns by operating across columns
-    # dat[, 'newcol' := (operation) ]
-    # No row filter, apply to all rows
-    # With row filter, NAs otherwise
-    # Ifelse
-    # dat[, 'newcol' := ifelse(V1==3, TRUE, FALSE)]
-        # Chaining ifelse
-        # dat[, 'newcol' := ifelse(V1==3, 'three', 
-                            ifelse(V1==4, 'four',
-                            ifelse(V1==5, 'five',
-                            other)]
-
-
-# pick random sample
-# pick random rows
-# convert to '.|.'
-# FIRST exclude samples with 25% or more missing data, THEN exclude sites with 10% or more missing data
-# convert '.|.' to NA
-# create column 
-
-
-
-# Day 2
-
-## .SD and Apply
-
-grep = indices
-grepl = grep logical
-
-## Apply functions
-
-## Foreach
-    # Reading multiple files
-    # Sliding window
-    #
-
-## Renaming with gsub
-## Pattern matching with grepl
-## Building test data sets
-
-## Combos with CJ
-
-`fwrite`
-
-
-library(openxlsx)
-
-
-openxlsx::read.xlsx(xlsxfilename, sheetName_OR_sheetIndex)
-
-touch 00_getting_started/README.md
-touch 01_importing_data/README.md
-touch 02_filtering_data/README.md
-touch 03_reorganize_columns/README.md
-touch 04_column_operations/README.md
-touch 05_merging/README.md
-touch 06_exporting/README.md
-touch 07_transform_to_long/README.md
-touch 08_transform_to_wide/README.md
-touch 09_iteration_with_foreach/README.md
-touch 10_aggregation/README.md
-touch 11_putting_it_together/README.md
-
+---
