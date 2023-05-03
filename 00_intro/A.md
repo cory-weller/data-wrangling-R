@@ -44,3 +44,4 @@ library(foreach)        # Load foreach
 
 ---
 
+[HOME](/README.md) | [NEXT](B.md)
