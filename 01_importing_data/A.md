@@ -36,7 +36,9 @@ Q. You are reading a large table with 2000 columns, but you only need to read in
 
 A: The `select` argument lets you specify which columns to keep. You would include `select=21:40` in your command. Alternatively, `drop` lets you specify columns to exclude, i.e. `drop=c(1:20, 41:2000)`
 
-[HOME](/README.md) | [NEXT](B.md)
+---
+
+[PREV](README.md) | [HOME](/README.md) | [NEXT](B.md)
 
 
 [^1]: *delimiter*: the character used to mark separate values in a sequence for machine-readability. Examples include comma for `.csv` or tab for `.tsv`. Sometimes a table might include multiple optional data fields in a single column separated by semicolon. We may not always be aware of it, but separate lines in a file are delimited by the `newline` character `'\n'` which appears as a new line on our screens.

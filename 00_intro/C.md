@@ -16,6 +16,6 @@ Docs for [base `R`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00In
 
 Docs specific to [`data.table`](https://www.rdocumentation.org/packages/data.table/versions/1.14.8)
 
-
+---
 
 [PREV](B.md) | [HOME](/README.md) |  [NEXT](/01_importing_data/README.md)
