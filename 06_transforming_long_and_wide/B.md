@@ -27,6 +27,7 @@ The following image illustrates the structure of a `dcast` formula:
 Using these rules, we'd structure our `dcast` formula to convert `dat.long` as:
 
 ```R
+# Convert dat.long from long to wide
 dcast(dat.long, SYMBOL~SAMPLE, value.var='counts')
 ```
 
@@ -36,9 +37,10 @@ This is because `dat.long` had those rows filtered out, as they contained no add
 We can automatically repopulate these `NA` instead as `0` with `fill=0`:
 
 ```R
+# Convert to wide and populate missing cells with 0 (instead of NA)
 dcast(dat.long, SYMBOL~SAMPLE, value.var='counts', fill=0)
 ```
 
 ---
 
-[PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
+[PREV](A.md) | [HOME](/README.md) | [NEXT](/07_aggregation_by_groups/README.md)

@@ -118,3 +118,7 @@ vowels <- c('A','E','I','O','U')
 dat[group %in% vowels, list('SD'=sd(count)), by=group]
 dat[group %in% vowels, .('SD'=sd(count)), by=group]     # .() is equivalent to list()
 ```
+
+---
+
+[PREV](README.md) | [HOME](/README.md) | [NEXT](/08_iterating_with_foreach/README.md)

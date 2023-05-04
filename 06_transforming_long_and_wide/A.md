@@ -16,6 +16,7 @@ Structuring a `melt` command is relatively straightforward. Columns that are cur
 specified in `measure.vars`. 
 
 ```R
+# Convert dat.wide to long format
 melt(dat.wide, measure.vars=c('SampleA','SampleB','SampleC','SampleD','SampleE'))
 ```
 
@@ -23,6 +24,7 @@ The new column names automatically default to `variable` and `value`, but we can
 within the `melt` command if desired:
 
 ```R
+# Specify column names when melting
 melt(dat.wide, measure.vars=c('SampleA','SampleB','SampleC','SampleD','SampleE'),
                variable.name='SAMPLE',
                value.name='counts')
