@@ -70,16 +70,16 @@ Check the results to confirm.
 Suppose you are looking at a single sample's data from an RNA-seq experiment. First load in `rna_seq_sample.tsv` using `fread`.
 
 ```R
-rnaseq_sample <- fread('rna_seq_sample.tsv')
+rnaseq_sample <- fread('rna_seq_sample.tsv', select=1:2)
 ```
 
 
-How would you create a new column that contains the log2 transformation of these counts? Note that we often take `log2` of `counts+1` in order to prevent `-Inf` results!
+How would you create a new column that contains the log2 transformation of the `SampleA` counts? Note that we often take `log2` of `(count value +1)` in order to prevent `-Inf` results!
 
 <details><summary>Solution</summary>
 
 ```R
-rnaseq_sample[, 'log2counts' := log2(counts + 1)]
+rnaseq_sample[, 'log2counts' := log2(SampleA + 1)]
 ```
 
 </details>
@@ -107,18 +107,3 @@ rnaseq_sample[order(-log2counts)][1:10, median(log2counts)]
 ---
 
 [PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
-
-<details><summary>How example data was generated</summary>
-
-Just FYI!
-
-```R
-# Initialize example RNA seq data
-set.seed(1)
-dat <- unique(data.table('SYMBOL'=paste0('GENE_', sapply(1:2000, function(x) paste0(sample(LETTERS, size=3), collapse='')))))[order(SYMBOL)]
-dat[, counts := abs(floor(jitter(rpois(.N, lambda=1))**8))]
-
-fwrite(dat, file='rna_seq_sample.tsv', sep='\t')
-```
-
-</details>
