@@ -1,1 +1,0 @@
-# output data as compressed VCF

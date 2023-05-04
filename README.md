@@ -46,10 +46,7 @@
 * [Advanced aggregation](07_aggregation_by_groups/A.md)
 
 ### [Iterating with Foreach](08_iterating_with_foreach/README.md)
-* [the `%do%` operator](08_iterating_with_foreach/A.md)
-* [combining data from multiple files](08_iterating_with_foreach/B.md)
-* [iterating over data subsets](08_iterating_with_foreach/C.md)
-* [sliding window analyses](08_iterating_with_foreach/D.md)
+* [Combining multiple data sets](08_iterating_with_foreach/A.md)
 
 ---
 

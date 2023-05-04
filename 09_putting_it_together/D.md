@@ -1,1 +1,0 @@
-# convert genotype to alt allele dosage
