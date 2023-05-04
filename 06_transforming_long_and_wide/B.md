@@ -16,10 +16,28 @@ dat.long <- fread('rna_seq_sample_long.tsv')
 
 `dat.long`, on the other hand, repeats the gene symbols and sample names for every row of the table. This results in the long format taking up more space when written to the disk, even though all the rows with a count of 0 have been excluded!
 
-## transform to wide with `dcast`
+## Transform to wide with `dcast`
+The following image illustrates the structure of a `dcast` formula:
+![](../dcast-illustration.png)
 
+* Things that remain how they are (as columns) go to the left of `~`
+* The column containing a group variable, each of which make a new column, goes to the right of `~`
+* The name of the value column is specified with `value.var=`
 
+Using these rules, we'd structure our `dcast` formula to convert `dat.long` as:
 
+```R
+dcast(dat.long, SYMBOL~SAMPLE, value.var='counts')
+```
+
+Note the structure that's printed out. It's similar to that of `dat.wide`, but it ocntains `NA` values.
+This is because `dat.long` had those rows filtered out, as they contained no additional information.
+
+We can automatically repopulate these `NA` instead as `0` with `fill=0`:
+
+```R
+dcast(dat.long, SYMBOL~SAMPLE, value.var='counts', fill=0)
+```
 
 ---
 

@@ -10,3 +10,7 @@
 
 ---
 
+
+
+# Use `foreach` to read in all files
+# 
