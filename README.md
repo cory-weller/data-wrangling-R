@@ -19,7 +19,7 @@
 * [useful filter functions](02_filtering_data/D.md)
 
 ### [Column operations](03_column_operations/README.md)
-* [Organizing columns](03_column_operations/A.md)
+* [Organizing columns, notation in `j`](03_column_operations/A.md)
 * [Assigning new columns](03_column_operations/B.md)
 * [Combining row and column operations](03_column_operations/C.md)
 * [Useful functions across columns](03_column_operations/D.md)
@@ -50,6 +50,6 @@
 
 ---
 
-## [Putting everything together](09_putting_it_together/README.md)
+<!-- ## [Putting everything together](09_putting_it_together/README.md) -->
 
 ---
