@@ -1,7 +1,7 @@
 # Transforming data between long and wide
 
 Data is commonly referred to as being in *wide* or *long* formats, even if it contains the same
-information. As expectd, long-format data has many rows and few columns. Wide-format data contains
+information. As expected, long-format data has many rows and few columns. Wide-format data contains
 many columns.
 
 Examples of the same data, represented in wide and long formats:

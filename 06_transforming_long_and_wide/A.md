@@ -32,4 +32,4 @@ melt(dat.wide, measure.vars=c('SampleA','SampleB','SampleC','SampleD','SampleE')
 
 ---
 
-[HOME](/README.md) | [NEXT](B.md)
+[PREV](README.md) | [HOME](/README.md) | [NEXT](B.md)

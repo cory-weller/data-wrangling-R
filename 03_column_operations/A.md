@@ -76,7 +76,7 @@ Speaking of the `:=` operator...
 
 ---
 
-[HOME](/README.md) | [NEXT](B.md)
+[PREV](README.md) | [HOME](/README.md) | [NEXT](B.md)
 
 
 [^1]: That character vector length can also be 1, i.e. a single string: `setnames(DT, 'V1', 'GeneID')`
