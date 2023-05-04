@@ -34,8 +34,8 @@
 ## Part 2
 
 ### [Merging data](05_merging_data/README.md)
-* [inner joins](05_merging_data/A.md)
-* [outer joins](05_merging_data/B.md)
+* [Binding rows or columns](05_merging_data/A.md)
+* [Joins](05_merging_data/B.md)
 
 ### [Transforming between long and wide](06_transforming_long_and_wide/README.md)
 * [to 'long' format](06_transforming_long_and_wide/A.md)

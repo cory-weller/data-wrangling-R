@@ -33,7 +33,7 @@ my_numbers <- runif(100)
 Then use the vector `my_numbers` to answer the following:
 
 
-Try writing my_numbers with writeLines. What happens?
+Try writing `my_numbers` with `writeLines`. What happens?
 
 <details><summary>Answer</summary>
  
