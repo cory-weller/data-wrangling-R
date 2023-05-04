@@ -8,9 +8,9 @@
 * [Read the docs!](00_intro/C.md)
 
 ### [Importing Text](01_importing_data/README.md)
-* [fread](01_importing_data/A.md)
-* [excel](01_importing_data/B.md)
-* [other files](01_importing_data/C.md)
+* [Importing with fread](01_importing_data/A.md)
+* [About excel files...](01_importing_data/B.md)
+* [Other imports](01_importing_data/C.md)
 
 ### [Filtering data by row](02_filtering_data/README.md)
 * [`data.table` notation in `i`](02_filtering_data/A.md)
