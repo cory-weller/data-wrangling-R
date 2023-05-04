@@ -41,6 +41,11 @@ dat.merged2 <- merge(dat.groups, dat.outcomes, by='PatientID', all=TRUE)
 
 Note that any missing values are filled with `NA`.
 
+This is referred to as a *full outer join* because it includes all data from both sets.[^1]
+
 ---
 
-[PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
+[PREV](A.md) | [HOME](/README.md) | [NEXT](/06_transforming_long_and_wide/README.md)
+
+
+[^1]: There is also less commonly the *left outer join* and *right outer join* that retains all keys from the first or second table, respectively.
