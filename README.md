@@ -42,8 +42,8 @@
 * [to 'wide' format](06_transforming_long_and_wide/B.md)
 
 ### [Aggregation by groups](07_aggregation_by_groups/README.md)
-* [Basic aggregation](07_aggregation_by_groups/A.md)
-* [Advanced aggregation](07_aggregation_by_groups/B.md)
+* [Basic aggregation](07_aggregation_by_groups/README.md)
+* [Advanced aggregation](07_aggregation_by_groups/A.md)
 
 ### [Iterating with Foreach](08_iterating_with_foreach/README.md)
 * [the `%do%` operator](08_iterating_with_foreach/A.md)
