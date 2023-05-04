@@ -55,33 +55,51 @@ With this new `subset_bed` table, suppose we want to ONLY have the chromosome ID
 * `replacement` is the text to take its place
 * `x` is the vector (or column name) we are searching through
 
-How would you use `gsub` to make a new column `chrID` that excludes the text `'chr'`?
-
-<details><summary>Answer</summary>
-
+We can use `gsub` to make a new column `chrID` that excludes the text `'chr'`
 
 ```R
 bed[, 'chrID' := gsub('chr', '', CHR)]
 ```
 
 Check the results to confirm.
+
+---
+
+## On your own
+
+Suppose you are looking at a single sample's data from an RNA-seq experiment. First load in `rna_seq_sample.tsv` using `fread`.
+
 ```R
-unique(bed$CHR)
-unique(bed$chrID)
+rnaseq_sample <- fread('rna_seq_sample.tsv')
+```
+
+
+How would you create a new column that contains the log2 transformation of these counts? Note that we often take `log2` of `counts+1` in order to prevent `-Inf` results!
+
+<details><summary>Solution</summary>
+
+```R
+rnaseq_sample[, 'log2counts' := log2(counts + 1)]
 ```
 
 </details>
 
 ---
 
-Suppose you have some RNA expression data, with a column `counts`. How would you create a new column that contains the log2 transformation of these counts?
+How might you calculate the median of the top ten highest `log2counts`?
 
-<details><summary>Answer</summary>
+<details><summary>Solution</summary>
 
-
+Building the command step by step:
 ```R
-# For example,
-dat[, 'log2counts' := log2(counts)]
+# reorder the rows in descending order
+rnaseq_sample[order(-log2counts)]       
+
+# Subset to the first 10 rows of the reordered table
+rnaseq_sample[order(-log2counts)][1:10] 
+
+# Calculate the median
+rnaseq_sample[order(-log2counts)][1:10, median(log2counts)]
 ```
 
 </details>
@@ -89,3 +107,18 @@ dat[, 'log2counts' := log2(counts)]
 ---
 
 [PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
+
+<details><summary>How example data was generated</summary>
+
+Just FYI!
+
+```R
+# Initialize example RNA seq data
+set.seed(1)
+dat <- unique(data.table('SYMBOL'=paste0('GENE_', sapply(1:2000, function(x) paste0(sample(LETTERS, size=3), collapse='')))))[order(SYMBOL)]
+dat[, counts := abs(floor(jitter(rpois(.N, lambda=1))**8))]
+
+fwrite(dat, file='rna_seq_sample.tsv', sep='\t')
+```
+
+</details>
