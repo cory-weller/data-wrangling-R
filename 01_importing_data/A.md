@@ -4,24 +4,23 @@
 
 It 'just works' most of the time, by
 * automatically detecting the delimiter[^1]
-* automatically detecting headers
+* automatically detecting headers (if they exist)
 * automatically uses multiple threads (faster loading)
 * automatically decompresses compressed text files
 
 ```R
-# Syntax examples (these files should  not exist)
-file_1 <- fread('filename.txt')             # read in a standard file
-file_2 <- fread('compressed_file.txt.gz')   # Automatic decompression
+file_1 <- fread('5000_lines.tsv')           # read in a standard file
+file_2 <- fread('5000_lines.tsv.gz')   # Automatic decompression
 ```
 
 ## Using `bash` commands within `fread`
 You can specify a bash command within `fread` by specifying the argument `cmd=<bash command>`. This will execute the `bash` command on the system level and then automatically read in the output. 
 
-*Note: this will not work if you are running `Rstudio` on a windows machine, because you don't have bash!
+*Note: this will not work if you are running `Rstudio` on a windows machine, because you don't have bash!*
 
 ```R
-# Syntax example (bigfile.txt does not exist)
-random_100_lines <- fread(cmd='shuf -n 100 bigfile.txt')    # Read in 100 randomly ordered lines from bigfile.txt
+tiny <- fread(cmd='shuf -n 50 5000_lines.tsv')    # Read in 50 random lines from 5000_lines.tsv
+last_lines <- fread(cmd='tail -n 500 5000_lines.tsv')    # Read in bottom 500 rows from 5000_lines.tsv
 ```
 
 ---
