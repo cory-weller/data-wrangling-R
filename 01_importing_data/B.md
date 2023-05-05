@@ -4,10 +4,10 @@ Sometimes you want to load (or save) `R` objects exactly as they appear in your 
 This can be done by writing a binary representation of your object (or objects) to the disk. A single R object can be saved with `saveRDS`:
 
 ```R
-saveRDS(mydataobject, file='mydata.rds')
+saveRDS(file_1, file='5000_lines.rds')
 
 # later...
-mydataobject <- readRDS('mydata.rds')
+varname1 <- readRDS('5000_lines.rds')
 ```
 The `.rds` file is a binary compressed representation of the object, meaning it cannot be read as text--it needs to be loaded by `R` to convert back into its original representation.
 
