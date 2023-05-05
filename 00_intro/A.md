@@ -3,23 +3,22 @@
 This section goes over how to launch an interactive `R` session in your terminal. You will need this repository on your local machine, as it contains a few demo files.
 
 <details><summary>Retrieve repository as direct download</summary>
-
+<br>
 Download this [`zip` file](https://github.com/cory-weller/data-wrangling-R/archive/refs/heads/main.zip)
-and unzip the `data-wrangling-R-main` to a location you can remember. You will need to open this target
-location within `R` or `Rstudio`.
+and unzip the `data-wrangling-R-main` folder into a location you can remember. 
+You will need to open this target location within `R` or `Rstudio`.
 
 </details>
-
-<details><summary>Retrieve repository using `git clone`</summary>
+<br>
+<details><summary>Retrieve repository using git clone</summary>
+<br>
 
 If `git` is installed on your machine (i.e. Mac and linux users):
 ```bash
 # while you are alrady in the directory you want to download to
 git clone https://github.com/cory-weller/data-wrangling-R.git
 ```
-
 </details>
-
 
 ---
 

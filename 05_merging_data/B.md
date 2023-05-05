@@ -9,7 +9,7 @@ set.seed(1)
 dat.groups <- data.table('PatientID'=paste0('PAT-', 1:50),
                     'ARM'=sample(c('treatment','control'), size=50, replace=TRUE))
 
-dat.outcomes <- data.table('PatientID'=sample(dat1$PatientID, size=40),
+dat.outcomes <- data.table('PatientID'=sample(dat.groups$PatientID, size=40),
                     'Outcome'=sample(0:1, size=40, replace=TRUE))
 ```
 
