@@ -9,8 +9,8 @@ It 'just works' most of the time, by
 * automatically decompresses compressed text files
 
 ```R
-file_1 <- fread('5000_lines.tsv')           # read in a standard file
-file_2 <- fread('5000_lines.tsv.gz')   # Automatic decompression
+file_1 <- fread('5000_lines.tsv')       # read in a standard file
+file_2 <- fread('100k_lines.tsv.gz')    # Automatic decompression
 ```
 
 ## Using `bash` commands within `fread`
@@ -19,8 +19,8 @@ You can specify a bash command within `fread` by specifying the argument `cmd=<b
 *Note: this will not work if you are running `Rstudio` on a windows machine, because you don't have bash!*
 
 ```R
-tiny <- fread(cmd='shuf -n 50 5000_lines.tsv')    # Read in 50 random lines from 5000_lines.tsv
-last_lines <- fread(cmd='tail -n 500 5000_lines.tsv')    # Read in bottom 500 rows from 5000_lines.tsv
+tiny_1 <- fread(cmd='tail -n 50 5000_lines.tsv')          # Read in 50 random lines from 5000_lines.tsv
+tiny_2  <- fread(cmd='zcat 100k_lines.tsv.gz | tail -n 500')   # First use zcat if running bash command on gzipped file
 ```
 
 ---
