@@ -38,6 +38,16 @@ within `R`. For that reason, I'll be using only the console (along with
 a plain text editor). This console is equivalent to the lower-left window
 within a typical `Rstudio` setup.
 
+<details><summary>R studio window</summary>
+
+![](/assets/rstudio-windows.png)
+</details>
+
+<details><summary>VS code window</summary>
+
+![](/assets/vscode-window.png)
+</details>
+
 ---
 
 ## If you don't have Biowulf access
@@ -52,8 +62,9 @@ to the top level of said repository.
 
 ## Running `R` On Biowulf
 Getting started on Biowulf is easy, because it comes with up-to-date
-versions of `R` and `data.table`/`foreach` preconfigured. After connecting
-to Biowulf via `ssh`, launch `R` by running:
+versions of `R` and `data.table`/`foreach` preconfigured. Note that
+you must request an interactive node before you can run `R`. After you
+connect to Biowulf via `ssh`, run the following:
 
 ```bash
 sinteractive            # Request an interactive node
@@ -64,10 +75,11 @@ module load R/4.2       # Load the R 4.2 module
 R                       # Start R within the console
 ```
 
-You should now be working in `R` within the terminal. 
+You should now be working in `R`. 
 
 You can suspend your `R` session and access the typical `bash` shell
-by pressing `[CTRL]`+`[Z]`.
+by pressing `[CTRL]`+`[Z]`. This is often handy when you need to
+quickly run some `bash` commands before going back to `R`.
 
 To bring the `R` session back to the foreground, execute the command `fg`
 
