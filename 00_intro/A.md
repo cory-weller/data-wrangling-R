@@ -4,6 +4,7 @@ This section goes over how to launch an interactive `R` session in your terminal
 
 <details><summary>Retrieve repository as direct download</summary>
 <br>
+
 Download this [`zip` file](https://github.com/cory-weller/data-wrangling-R/archive/refs/heads/main.zip)
 and unzip the `data-wrangling-R-main` folder into a location you can remember. 
 You will need to open this target location within `R` or `Rstudio`.
