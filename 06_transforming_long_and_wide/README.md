@@ -20,16 +20,32 @@ The underlying data is the same, but its organization is different.
 
 ```R
 set.seed(1)
-dat <- unique(data.table('SYMBOL'=paste0('GENE_', sapply(1:2000, function(x) paste0(sample(LETTERS, size=3), collapse='')))))[order(SYMBOL)]
+dat <- data.table(
+    'SYMBOL'=paste0('GENE_', sapply(
+        1:2000,
+        function(x) paste0(sample(LETTERS, size=3), collapse='')
+    ))
+)
+dat <- unique(dat)
+dat <- dat[order(SYMBOL)]
 
-for(samplename in c('SampleA','SampleB','SampleC','SampleD','SampleE')) {
+samplenames <- paste0('Sample', LETTERS[1:5])
+for(samplename in samplenames) {
     new_counts <- abs(floor(jitter(rpois(nrow(dat), lambda=1))**8))
     dat[[samplename]] <- new_counts
 }
 
 fwrite(dat, file='rna_seq_sample.tsv', sep='\t')
 
-dat.long <- melt(dat, measure.vars=c('SampleA','SampleB','SampleC','SampleD','SampleE'), variable.name='SAMPLE', value.name='counts')[,c('SAMPLE','SYMBOL','counts')]
+dat.long <- melt(
+    dat,
+    measure.vars=samplenames,
+    variable.name='SAMPLE',
+    value.name='counts'
+)
+
+setcolorder(dat.long, c('SAMPLE','SYMBOL','counts'))
+
 fwrite(dat.long[counts != 0], file='rna_seq_sample_long.tsv', sep='\t')
 ```
 

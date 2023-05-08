@@ -2,10 +2,11 @@
 
 Calculating summaries for statistics across groups.
 
-Thus far we've referred to `i` and `j` notation, but there's also a third category, known as `by`.
+Thus far we've referred to `i` and `j` notation, but there's also a
+third category, known as `by`.
 
-By including `by` in our `data.table` command, we can automatically perform
-operations separately for different groups.
+By including `by` in our `data.table` command, we can automatically
+perform operations separately for different groups.
 
 ## Counting groups by `.N`
 
@@ -19,8 +20,10 @@ The `.N` variable is a shortcut for counting number of rows:
 First, initialize this familiar table:
 ```R
 set.seed(1)
-dat <- data.table('group'=sample(LETTERS, size=1000, replace=TRUE),
-                  'count'=sample(100, size=1000, replace=TRUE))
+dat <- data.table(
+    'group'=sample(LETTERS, size=1000, replace=TRUE),
+    'count'=sample(100, size=1000, replace=TRUE)
+)
 ```
 
 If we only were interested in how many times each letter shows up in `dat`:
@@ -29,7 +32,8 @@ If we only were interested in how many times each letter shows up in `dat`:
 dat[, .N, by=group]
 ```
 
-Alternatively, if we wanted to know how many times each `group` has a `count` above 80, we would add a filter in `i`:
+Alternatively, if we wanted to know how many times each `group` has a
+`count` above 80, we would add a filter in `i`:
 
 ```R
 dat[count > 80, .N, by=group]
@@ -37,21 +41,27 @@ dat[count > 80, .N, by=group]
 
 ## Counting by multiple groups
 
-We aren't limited ty group by a single column. We can include as many columns as
-we want within a list, i.e. `by=list(col1, col2, col3)`.
+We aren't limited ty group by a single column. We can include as many
+columns as we want within a list, i.e. `by=list(col1, col2, col3)`.
 
 First, re-initialize our table of ARM and outcome:
 ```R
 set.seed(1)
-dat.groups <- data.table('PatientID'=paste0('PAT-', 1:50),
-                    'ARM'=sample(c('treatment','control'), size=50, replace=TRUE))
+dat.groups <- data.table(
+    'PatientID'=paste0('PAT-', 1:50),
+    'ARM'=sample(c('treatment','control'), size=50, replace=TRUE)
+)
 
-dat.outcomes <- data.table('PatientID'=sample(dat1$PatientID, size=40),
-                    'Outcome'=sample(0:1, size=40, replace=TRUE))
+dat.outcomes <- data.table(
+    'PatientID'=sample(dat1$PatientID, size=40),
+    'Outcome'=sample(0:1, size=40, replace=TRUE)
+)
+
 dat.merged <- merge(dat.groups, dat.outcomes, all=TRUE)
 ```
 
-We can then calculate occurrences for every combination of `ARM` and `Outcome`:
+We can then calculate occurrences for every combination of `ARM` and
+`Outcome`:
 ```R
 # Counts for all combinations:
 dat.merged[, .N, by=list(ARM, Outcome)]

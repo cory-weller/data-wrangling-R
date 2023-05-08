@@ -1,7 +1,8 @@
 # Combining row and column operations
 
-Thus far, we've separately tried subsetting rows in `i` and performing column operations in `j`.
-But there's nothing stopping us from doing both at the same time in a single command: `dat[i,j]`
+Thus far, we've separately tried subsetting rows in `i` and performing
+column operations in `j`. But there's nothing stopping us from doing
+both at the same time in a single command: `dat[i,j]`
 
 This is functionally the same as chaining together an `i` then a `j` command:
 
@@ -22,7 +23,9 @@ dat[group=='B', sum(count)]     # Subset only group B, then sum counts
 dat[group=='B'][, sum(count)]   # equivalent
 ```
 
-However, note that `dat[,j][i]` is *not* necessarily equivalent. This is because the `j` command would be operated on the complete data, instead of the desired subset.
+However, note that `dat[,j][i]` is *not* necessarily equivalent. This
+is because the `j` command would be operated on the complete data,
+instead of the desired subset.
 
 Notice what happens when `sum` command in `j` comes first.
 ```R
@@ -33,7 +36,10 @@ In this case, the entire column is summed, which is equivalent to `sum(dat$count
 
 ## Conditional assignment
 
-You can conditionally assign values to a column by first including a row filter in `i`. Working with the same `dat` object as above, suppose we know group `A` is dated `20230401` and group `B` is dated `20230501`. We can assign those values in a new column named `date`:
+You can conditionally assign values to a column by first including a
+row filter in `i`. Working with the same `dat` object as above, suppose
+we know group `A` is dated `20230401` and group `B` is dated `20230501`.
+We can assign those values in a new column named `date`:
 
 ```R
 dat[group=='A', 'date' := 20230401]
@@ -49,8 +55,9 @@ dat[group=='B', 'date' := 20230501]
 
 ## On your own
 
-Initialize this example data set, look at its contents, and then attempt the exercises.
-Note that `set.seed` will ensure the random sampling gives everyone the same result.
+Initialize this example data set, look at its contents, and then attempt
+the exercises. Note that `set.seed` will ensure the random sampling gives
+everyone the same result.
 
 ```R
 set.seed(1)
@@ -77,7 +84,8 @@ yielding the result
 
 ---
 
-Use the `sd` function to calculate the standard deviation for counts of all rows where group is a vowel.
+Use the `sd` function to calculate the standard deviation for counts
+of all rows where group is a vowel.
 
 <details><summary>Solution</summary>
 
@@ -86,7 +94,7 @@ Use the `sd` function to calculate the standard deviation for counts of all rows
 # define vowel values
 vowels <- c('A','E','I','O','U')
 
-# reminder: %in% selects rows where a column matches anything in a set
+# %in% selects rows where a column matches anything in a set
 dat[group %in% vowels]
 
 # calculate standard deviation after subsetting
@@ -97,7 +105,8 @@ dat[group %in% vowels, sd(count)]
 
 ---
 
-Create a new column `letter_type` that appropriately contains `'consonant'` or `'vowel'` for each row.
+Create a new column `letter_type` that appropriately contains 
+`'consonant'` or `'vowel'` for each row.
 
 <details><summary>Solution</summary>
 

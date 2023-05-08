@@ -1,20 +1,25 @@
 # Writing data tables to text with `fwrite`
 
-The function `fwrite` is the workhorse of saving any table as text output such as tab-separated values (`.tsv`) or comma-separated values (`.csv`). It's essentially the counterpart to `fread` when it comes to exporting data.
+The function `fwrite` is the workhorse of saving any table as text
+output such as tab-separated values (`.tsv`) or comma-separated values
+(`.csv`). It's essentially the counterpart to `fread` when it comes to
+exporting data.
 
 ```R
 # Examples
 fwrite(dat, file='filename.csv', sep=',')   # Write as csv
-fwrite(dat, file='filename.csv')            # Write as csv (equivalent)
+fwrite(dat, file='filename.csv')            # (equivalent)
 fwrite(dat, file='filename.tsv', sep='\t')  # Write as tsv
 ```
 
 
 
 ## Writing tables as compressed text
-Compressed text (e.g. with `gzip`) can save a lot of disk space for larger files.
-`fwrite` automatically detects the `.gz` extension in filenames and writes as compressed text.[^1]
-```
+Compressed text (e.g. with `gzip`) can save a lot of disk space for
+larger files. `fwrite` automatically detects the `.gz` extension in
+filenames and writes as compressed text.[^1]
+
+```R
 fwrite(dat, file='filename.txt.gz', sep='\t')  # Write as gzipped tsv
 ```
 
@@ -33,7 +38,8 @@ What happens to NA values by default when using `fwrite`?
 
 ---
 
-Suppose you don't want the default behavior. How might you force `fwrite` to write `NA` as `'NA'`?
+Suppose you don't want the default behavior. How might you force
+`fwrite` to write `NA` as `'NA'`?
 
 <details><summary>Answer</summary>
 

@@ -1,15 +1,16 @@
 # Useful functions across columns
 
-There are a multitude of useful functions in `R` and it would unfortunately take months to go over
-all of them. I encourage you to work through this section on your own time to get a handle of some
-of these useful functions, read their docs, and/or play around with them.
+There are a multitude of useful functions in `R` and it would unfortunately
+take months to go over all of them. I encourage you to work through this
+section on your own time to get a handle of some of these useful functions,
+read their docs, and/or play around with them.
 
 
 ## Finding previous or next values with `shift`
 
-Say you have a `VCF` file with a list of SNP positions, and you're interested in finding how close
-any given SNP is to its nearest neighbor. First, re-initialize the `vcf` table and subset to
-only include SNPs.
+Say you have a `VCF` file with a list of SNP positions, and you're
+interested in finding how close any given SNP is to its nearest neighbor.
+First, re-initialize the `vcf` table and subset to only include SNPs.
 
 ```R
 # read in example vcf
@@ -22,23 +23,28 @@ nucleotides <- c('A','C','T','G')
 vcf <- vcf[REF %in% nucleotides][ALT %in% nucleotides]      
 ```
 
-Now we can create a new column that shifts the `POS` column up or down one, indicating the nearest
-SNP to the left or to the right. We specify which direction to shift the vector with `typee`:
+Now we can create a new column that shifts the `POS` column up or down
+one, indicating the nearest SNP to the left or to the right. We specify
+which direction to shift the vector with `typee`:
 ```R
 vcf[, 'nearest_left' := shift(POS, n=1, type='lag')]
 vcf[, 'nearest_right' := shift(POS, n=1, type='lead')]
 ```
 
-Notice how `NA` values are added at the ends where there is no value to look back or forward to.
+Notice how `NA` values are added at the ends where there is no value
+to look back or forward to.
 
 
-We used `shift` above to find each SNP's nearest neighbor to the left and the right. A reasonable
-next question might be, *"what is the ID of the nearest SNP"* (as in `rs######` within the `ID` column).
-How might you generate a new column that contains the rsID of the nearest SNP for every row?
+We used `shift` above to find each SNP's nearest neighbor to the left
+and the right. A reasonable next question might be, 
+*"what is the ID of the nearest SNP"* (as in `rs######` within the `ID`
+column). How might you generate a new column that contains the rsID of
+the nearest SNP for every row?
 
 <details><summary>Solution</summary>
 
-First, we need to calculate (for every row) the distance from the SNP in question to its left and
+First, we need to calculate (for every row) the distance from the SNP
+in question to its left and
 right neighbors. 
 
  solution is to take the minimum value of `distance_left` and `distance_right`
@@ -47,25 +53,31 @@ vcf[, 'distance_left' := POS - nearest_left]
 vcf[, 'distance_right' := nearest_right - POS]
 vcf[, 'ID_left' := shift(ID, type='lag')]
 vcf[, 'ID_right' := shift(ID, type='lead')]
-vcf[, 'nearest_snp' := ifelse(distance_left < distance_right, ID_left, ID_right)]
+vcf[, 'nearest_snp' := ifelse(distance_left < distance_right,
+                              ID_left, ID_right)]
 ```
 </details>
 
 ---
 
-*Bonus*: the above `ifelse` command resulted in a problem with the `nearest_snp` column. What is it?
+*Bonus*: the above `ifelse` command resulted in a problem with the
+`nearest_snp` column. What is it?
 How might you fix it?
 
 <details><summary>Solution</summary>
 
-The first and last rows of `nearest_snp` are `NA`! This results because an inequality test using
-`>` or `<` with `NA` on either side produces an `NA` result. It is, after all, nonsensical to ask
-if 3 is less than `NA`.
+The first and last rows of `nearest_snp` are `NA`! This results because
+an inequality test using `>` or `<` with `NA` on either side produces
+an `NA` result. It is, after all, nonsensical to ask if 3 is less than
+`NA`.
 
 One solution is to fix the missing rows specifically:
 ```R
-vcf[is.na(ID_left), 'nearest_snp' := ID_right]  # Fix rows where ID_left is NA
-vcf[is.na(ID_right), 'nearest_snp' := ID_left]  # Converse of previous line
+# Fix rows where ID_left is NA
+vcf[is.na(ID_left), 'nearest_snp' := ID_right]
+
+# Counterpart to previous line
+vcf[is.na(ID_right), 'nearest_snp' := ID_left]  
 ```
 
 But many other solutions exist!
@@ -75,31 +87,40 @@ But many other solutions exist!
 ---
 ## Generating rank order column with `frank`
 
-`frank` is an optimized version of `rank`. This function is useful for generating a new column containing
-numbers specifying the ordered rank of another column. E.g. If a table contains count data, you can
-easily create a new column where `1` is the most abundant, `2` is the second most abundant, etc.
+`frank` is an optimized version of `rank`. This function is useful for
+generating a new column containing numbers specifying the ordered rank
+of another column. E.g. If a table contains count data, you can easily
+create a new column where `1` is the most abundant, `2` is the second
+most abundant, etc.
 
 ```R
 # Generate an example table
-dat <- data.table('geneID'=paste('GENE', LETTERS, sep=''), counts=sample(1e6, size=26))
+dat <- data.table('geneID'=paste('GENE', LETTERS, sep=''),
+                  counts=sample(1e6, size=26))
 ```
 
 ```R
-dat[, 'rank' := frank(counts)]              # Assign new column with rank in ascending order
-dat[, 'rank_reverse' := frank(-counts)]     # Same, but for descending order
+# Assign new column with rank in ascending order
+dat[, 'rank' := frank(counts)]
+
+# Same, but for descending order
+dat[, 'rank_reverse' := frank(-counts)]     
 ```
 ---
 
 ## And more!
 
-While there's many more, I want to highlight two particularly useful functions:
+While there's many more, I want to highlight two particularly useful
+functions:
 
-`tstrsplit` is a transposed version of `strsplit`. As you might suspect, the purpose
-of these functions is to split strings. Splitting strings is often useful when a file name contains
-multiple fields with special meaning. For example, perhaps a file name contains info about a treatment,
+`tstrsplit` is a transposed version of `strsplit`. As you might suspect,
+the purpose of these functions is to split strings. Splitting strings
+is often useful when a file name contains multiple fields with special
+meaning. For example, perhaps a file name contains info about a treatment,
 batch, cell line, etc.
 
-`cut` is useful for binning data into user-defined ranges. For example, you could label your data as being in low, medium, or high groups.
+`cut` is useful for binning data into user-defined ranges. For example,
+you could label your data as being in low, medium, or high groups.
 
 
 ---

@@ -1,16 +1,17 @@
-# Putting it together
+# Don't stop here!
+
+These tutorials have gone over (most of) the basic necessities of
+wrangling data in `R` using `data.table` and `foreach`. Practice makes
+perfect, and you're encouraged to work through any yet-incompleted
+practice problems.
+
+For more practice on your own, try the following:
+
+<details><summary>More</summary>
+
+Not yet implemented!
+
+</details>
 
 
-# pick random sample
-# pick random rows
-# convert to '.|.'
-# FIRST exclude samples with 25% or more missing data, THEN exclude sites with 10% or more missing data
-# convert '.|.' to NA
-# create column 
-
----
-
-
-
-# Use `foreach` to read in all files
-# 
+[HOME](/README.md)

@@ -3,8 +3,9 @@
 
 ## Writing vectors to text file
 
-`writeLines(con='filename.txt')` saves a vector. By default, items are separated by a newline, i.e. `sep='\n'`.
-You can separate by other characters if desired by changing the value of `sep=`:
+`writeLines(con='filename.txt')` saves a vector. By default, items are
+separated by a newline, i.e. `sep='\n'`. You can separate by other
+characters if desired by changing the value of `sep=`:
 
 ```R
 my_vector <- c(letters,LETTERS)
@@ -21,7 +22,8 @@ Check the contents of the file to confirm it worked as expected.
 
 ## Saving  R objects as a file
 
-We already mentioned `saveRDS()` and `save()`. Look back [here](/01_importing_data/B.md) if desired.
+We already mentioned `saveRDS()` and `save()`. Look back
+[here](/01_importing_data/B.md) if desired.
 
 ---
 
