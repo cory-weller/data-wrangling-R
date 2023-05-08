@@ -1,8 +1,8 @@
 # Read the docs!
 
-If ever a function is unclear, or even if you think it *is* clear, the first place to go is the documentation.
-
-Know that it's unrealistic to expect anyone to memorize how every function works and never forget.
+If ever a function is unclear, or even if you think it *is* clear, the
+first place to go is the documentation. Know that it's unrealistic to
+expect anyone to memorize how every function works and never forget.
 
 You can always check directly within `R` by preceeding a function with `?`
 ```
