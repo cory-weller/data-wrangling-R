@@ -27,10 +27,6 @@
 * [writing data tables to text](04_exporting_data/A.md)
 * [saving other objects](04_exporting_data/B.md)
 
----
-
-## Part 2
-
 ### [Merging data](05_merging_data/README.md)
 * [Binding rows or columns](05_merging_data/A.md)
 * [Joins](05_merging_data/B.md)
@@ -45,9 +41,3 @@
 
 ### [Iterating with Foreach](08_iterating_with_foreach/README.md)
 * [Combining multiple data sets](08_iterating_with_foreach/A.md)
-
----
-
-<!-- ## [Putting everything together](09_putting_it_together/README.md) -->
-
----
