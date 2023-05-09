@@ -34,7 +34,7 @@
 * [to 'long' format](06_transforming_long_and_wide/A.md)
 * [to 'wide' format](06_transforming_long_and_wide/B.md)
 
-## [Aggregation by groups](07_aggregation_by_groups/README.md)
+## [Aggregation across grups with `by`](07_aggregation_by_groups/README.md)
 * [Basic aggregation](07_aggregation_by_groups/README.md)
 * [Advanced aggregation](07_aggregation_by_groups/A.md)
 
