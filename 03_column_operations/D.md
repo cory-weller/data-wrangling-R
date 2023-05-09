@@ -151,6 +151,8 @@ dat[, bin := as.numeric(bin)]
 dat[bin==1]
 dat[bin==2]
 dat[bin==3]
+```
+
 ---
 
 [PREV](C.md) | [HOME](/README.md) | [NEXT](/04_exporting_data/README.md)
