@@ -59,7 +59,7 @@ bed[! CHR %in% desired_chrs]
 
 ## Filtering numeric values within a range using `%between%`
 
-The %between% operator is an optimized shorthand function that checks
+The `%between%` operator is an optimized shorthand function that checks
 if the numeric value in a column is within the bounds of two values:
 ```R
 min_val <- 1000000
@@ -87,7 +87,7 @@ filter_by_in <- bed[CHR %in% desired_chrs]
 filter_by_like <- bed[CHR %like% 'chr']
 
 # more specific, using regular expressions
-filter_by_like_regex <- bed[CHR %like% '^chr[0-9]?|[XY]']  
+filter_by_like_regex <- bed[CHR %like% '^chr([0-9]+|[XY])']
 ```
 
 Do these provide equivalent results? We might suspect so based on row

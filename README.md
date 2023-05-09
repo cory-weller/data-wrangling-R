@@ -10,7 +10,6 @@
 ### [Importing Text](01_importing_data/README.md)
 * [Importing with fread](01_importing_data/A.md)
 * [About excel files...](01_importing_data/B.md)
-* [Other imports](01_importing_data/C.md)
 
 ### [Filtering data by row](02_filtering_data/README.md)
 * [`data.table` notation in `i`](02_filtering_data/A.md)
@@ -26,8 +25,7 @@
 
 ### [Exporting data](04_exporting_data/README.md)
 * [writing data tables to text](04_exporting_data/A.md)
-* [writing vectors to text](04_exporting_data/B.md)
-* [saving R objects to disk](04_exporting_data/C.md)
+* [saving other objects](04_exporting_data/B.md)
 
 ---
 
