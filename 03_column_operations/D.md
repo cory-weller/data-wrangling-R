@@ -108,16 +108,28 @@ dat[, 'rank_reverse' := frank(-counts)]
 ```
 ---
 
-## And more!
-
-While there's many more, I want to highlight two particularly useful
-functions:
+## String split across columns
 
 `tstrsplit` is a transposed version of `strsplit`. As you might suspect,
 the purpose of these functions is to split strings. Splitting strings
-is often useful when a file name contains multiple fields with special
-meaning. For example, perhaps a file name contains info about a treatment,
-batch, cell line, etc.
+is often useful when a file name or column value contains multiple fields
+with special meaning.
+
+```R
+dat <- fread('example_data.tsv')
+dat[, 'sample_id' := tstrsplit(sample_info, split='_')[1] ]
+dat[, 'sex' := tstrsplit(sample_info, split='_')[2] ]
+dat[, 'ARM' := tstrsplit(sample_info, split='_')[3] ]
+```
+
+It is also possible to assign all three at the same time:
+```R
+dat <- fread('example_data.tsv')
+dat[, c('sample_id','sex','ARM') := tstrsplit(sample_info, split='_')]
+```
+
+Note that the new columns will also be strings themselves. You may
+need to include `as.numeric` to convert values to numbers as necessary.
 
 `cut` is useful for binning data into user-defined ranges. For example,
 you could label your data as being in low, medium, or high groups.
@@ -126,3 +138,26 @@ you could label your data as being in low, medium, or high groups.
 ---
 
 [PREV](C.md) | [HOME](/README.md) | [NEXT](/04_exporting_data/README.md)
+
+<details><summary>How sample data was generated</summary>
+
+```R
+library(data.table)
+library(foreach)
+set.seed(1)
+
+dat <- foreach(i=1:200, .combine='rbind') %do% {
+    data.table('sample_info'=paste(
+        sample(1000:9999, size=1),
+        sample(c('M','F'), size=1),
+        sample(c('Case','Control'), size=1),
+        sep='_'))
+}
+dat[, 'measurement1' := runif(nrow(dat))]
+dat[, 'measurement2' := floor(runif(nrow(dat))*100)]
+
+dat <- dat[order(sample_info)]
+fwrite(dat, file='example_data.tsv', sep='\t')
+```
+
+</details>
