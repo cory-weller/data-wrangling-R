@@ -3,11 +3,18 @@
 ## About me
 Hi! I'm Cory (he/him), a bioinformatician working for Data Tecnica International (DTi) at CARD on the NIH main campus. Broadly, my role is to develop or implement accessible and reproducible scientific analysis pipelines. I work with large-scale DNA, RNA and proteomics data, focused on the Linux HPC environment (e.g. Biowulf) using bash, R and python. I recently transitioned from my postdoc with NHGRI on the NIH main campus, where I worked on developing and testing massively parallel CRISPR variant engineering in humanized yeast. Prior to that, my PhD work was with the Bergland lab at UVA, where I developed a pipeline for taking extremely low amounts of DNA sequencing data and predicting whole genome sequences (in recombinant Drosophila populations). While at UVA, I developed and taught an introductory bioinformatics class for students with no prior experience with the command-line. 
 
-We are recruiting a bioinformatics specialist! Visit [https://www.datatecnica.com/jobs](https://www.datatecnica.com/jobs)
+**JOB ALERT!** 
+
+We are recruiting a bioinformatics specialist! The role is hybrid
+(on main campus 2-3 days per week).
+
+*The main responsibilities for this position include the implementation and maintenance of common research pipelines. There are some opportunities for independent creative research as well.*
+
+Visit [https://www.datatecnica.com/jobs](https://www.datatecnica.com/jobs)
+
+<img src="https://images.squarespace-cdn.com/content/v1/58f8c5275016e173529707b5/1492700099064-YUTZ54NVMWLIDJ0WISNJ/DataTecnica_White.png" width="200">
 
 
-
-![](/assets/dti-logo.png)
 
 ## About this class
 
