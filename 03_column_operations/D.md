@@ -131,9 +131,6 @@ dat[, c('sample_id','sex','ARM') := tstrsplit(sample_info, split='_')]
 Note that the new columns will also be strings themselves. You may
 need to include `as.numeric` to convert values to numbers as necessary.
 
-`cut` is useful for binning data into user-defined ranges. For example,
-you could label your data as being in low, medium, or high groups.
-
 
 ---
 
