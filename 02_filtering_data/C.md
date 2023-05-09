@@ -13,11 +13,18 @@ Still working with the example `data.table` from before:
 dat <- data.table('N'=1:26, 'lower'=letters, 'upper'=LETTERS)
 ```
 
-Run the following command and see what happens:
+Examples:
 ```R
+dat[N < 10 & N > 3]
 dat[N < 10][N > 3]
+
+dat[N > 20 & upper != 'Z']
+dat[N > 20][upper != 'Z']
 ```
 
+Chaining becomes even more useful later on after we introduce functions
+that perform calculations and generate new columns, because we can
+do calculations then filter on desired conditions at the same time.
 
 ---
 ## On your own

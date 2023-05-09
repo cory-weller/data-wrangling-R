@@ -18,7 +18,10 @@ list.files()
 file_1 <- fread('5000_lines.tsv')       
 
 # .gz files are automatically decompressed
-file_2 <- fread('100k_lines.tsv.gz')    
+file_2 <- fread('100k_lines.tsv.gz')
+
+# Add column names during import
+file_2 <- fread('100k_lines.tsv.gz', col.names=c('N','A','B','C'))
 ```
 
 ## Using `bash` commands within `fread`

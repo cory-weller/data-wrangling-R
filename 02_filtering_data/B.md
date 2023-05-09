@@ -19,22 +19,28 @@ dat[N >= 15]
 
 # The %% (modulo) operator returns the remainder after division
 dat[N %% 2 == 0]        
+dat[lower == 'a']
 dat[lower == 'A']
 ```
 
 We can include conditional operators within these tests:
 * indicate AND with `&`
-* indicate OR with `|`
+* indicate OR with `|` (`SHIFT` + key above `RETURN`)
 * indicate NOT with `!`
 * indicate EQUALS with `==`
 * indicate NOTEQUAL with `!=`
 
+```R
+dat[N < 10 & lower != 'c']
+```
+
 Additionally, the greater/less than (and their or-equal-to counterparts)
 `>`, `<`, `>=` and `<=` work here.
 
-```R
-dat[lower == 'a' | N > 20]
-```
+Note: Assigning new variables can be done with `=` or with `<-`. 
+
+It is advisable to avoid using `=` to reduce confusion with `==`
+
 
 ---
 ## On your own

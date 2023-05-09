@@ -6,6 +6,7 @@ include (or exclude) in square brackets immediately following the
 `data.table` object. 
 
 
+
 ## Extracting by row index
 Say you have a object `dat`. Specifying numeric indices in `i` will
 extract those rows.
@@ -15,7 +16,8 @@ running the following commands:
 ```R
 dat <- data.table('N'=1:26, 'lower'=letters, 'upper'=LETTERS)
 
-dat[12]
+dat[i=12]
+dat[12]         # equivalent! 'i=' is implicit
 dat[25]
 dat[12:20]
 dat[! 12:20]
