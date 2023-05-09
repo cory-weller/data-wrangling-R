@@ -6,6 +6,8 @@ columns, and you want to combine them into a single table. It's
 typically necessary that the data is the same length to properly be
 bound together.
 
+![](/assets/row-binding.png)
+
 ## Binding rows with `rbind`
 Say we have two separate tables, but they contain the same column structure:
 ```R
@@ -21,6 +23,9 @@ rbound <- rbind(dat1, dat2)
 ## Binding columns with `cbind`
 
 The same principal applies to combining data in a column-wise fasion. 
+
+![](/assets/col-binding.png)
+
 
 That said, binding columns is less common, because it's not typically
 the case that you have pre-sorted vectors ready to tack onto an existing

@@ -15,6 +15,9 @@ directly applicable to `dplyr`. While AI hasn't fully taken over our
 jobs yet, it is quite proficient at converting `data.table` notation
 into `dplyr` notation. 
 
+That said, this [Stack Overflow](https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly)
+entry has some input on the topic.
+
 ---
 
 [PREV](A.md) | [HOME](/README.md) | [NEXT](C.md)
