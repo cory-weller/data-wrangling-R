@@ -131,6 +131,27 @@ dat[, c('sample_id','sex','ARM') := tstrsplit(sample_info, split='_')]
 Note that the new columns will also be strings themselves. You may
 need to include `as.numeric` to convert values to numbers as necessary.
 
+## Binning data
+       
+The function `cut` can automatically assign columns to a group, as
+defined by bin sizes of your choice:
+       
+```R
+dat <- data.table(
+    'ID'=1:1e5,
+    'measurement'=sample(1:1000, size=1e5, replace=T)
+)
+
+# Assign bins by powers of 10
+dat[, 'bin' := cut(measurement, breaks=c(0, 10, 100, 1000))]
+
+# convert the output from 'cut' into number
+dat[, bin := as.numeric(bin)]
+
+dat[bin==1]
+dat[bin==2]
+dat[bin==3]
+```
 
 ---
 

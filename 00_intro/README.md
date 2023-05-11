@@ -18,7 +18,7 @@ Visit [https://www.datatecnica.com/jobs](https://www.datatecnica.com/jobs)
 
 ## About this class
 
-There you are, finished with recording results and generating reports for your most recent experiment. But alas! The data is spread across multiple sources with different formatting and file types. What we need is some data wrangling: the process of preparing data such that it's combined, organized and formatted before downstream use (like running statistical tests or making figures). We'll cover various tips and tricks for wrangling data, with an emphasis on the syntax of the handy R packages data.table and foreach. We'll cover topics such as
+There you are, finished with recording results and generating reports for your most recent experiment. But alas! The data is spread across multiple sources with different formatting and file types. What we need is some data wrangling: the process of preparing data such that it's combined, organized and formatted before downstream use (like running statistical tests or making figures). We'll cover various tips and tricks for wrangling data, with an emphasis on the syntax of the handy R packages `data.table` and `foreach`. We'll cover topics such as
 
 * Input and output operations, like importing data and writing output, including and combining multiple files into a single table
 * How to reshape between 'long' and 'wide' data, and when to use which
