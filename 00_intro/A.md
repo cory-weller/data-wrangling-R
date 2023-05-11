@@ -58,6 +58,66 @@ version of `data.table` and `foreach`. You will need to manually retrieve
 this repository and make sure your `Rstudio` working directory is set
 to the top level of said repository.
 
+**NEW!** Check below for running `R` on Google Colab as a Jupyter notebook
+
+<details><summary>Google Colab setup</summary>
+
+Google offers a free tier of access to its Jupyter notebook platform, 
+Colab. While the free tier doesn't come with large memory or computing
+resources, it could be a useful tool for learning.
+
+First, while signed in to any Google account, visit the website for
+[Google Colab](https://colab.research.google.com)
+
+You'll be greeted with a notebook opening screen. The screen can also
+be manually accessed via `File > Open Notebook` on the menu bar.
+
+![](/assets/colab1.png)
+
+To open the one I've prepared to set up `R`, click the `GitHub` tab and
+enter the repository info `cory-weller/data-wrangling-R`:
+
+![](/assets/colab2.png)
+
+Then open `R_notebook.ipynb`. You'll then be taken to the notebook
+interface, which is composed of cells of text or code. Cells of code
+must be ran by either clicking the play button, or pressing the keys
+`CTRL`+`ENTER` while the cell is selected.
+
+![](/assets/colab3.png)
+
+Because I authored the notebook (and not Google), you'll see a warning
+to make sure you trust the contents before continuing. You can see for
+yourself that the cell only does the following:
+* installs the `rpy2` utility (which lets us interface with `R` in the notebook)
+* loads `rpy2`
+* Installs three R packages
+
+The 'play' button next to the cell will change to runnning state, with
+a 'stop' button if you want to halt execution.
+
+Once the code within the cell is finished running (there will be some
+warnings printed during the installation), the button will change back
+to the 'play' icon, and a green checkmark will be shown.
+
+Scroll down and note that Jupyter uses *cell magic* to indicate when
+to run different coding languages. By default, the cell will run as
+`python` code. To tell the notebook to instead use `R`, begin that
+cell with `%%R`. There are two final considerations:
+
+* First, know that your notebook session is ephemeral! If you walk away or
+close the session, the state of the machine hosting the notebook will
+power off, and all code will need to be re-ran the next time you connect.
+* Second, because you are opening up a copy of the notebook from GitHub,
+you will need to save the notebook to your own google account for any
+changes to be saved. Otherwise your work will be lost. You can save
+your own copy via `File > Save a Copy in Google Drive`.
+
+
+</details>
+
+
+
 ---
 
 ## Running `R` On Biowulf
