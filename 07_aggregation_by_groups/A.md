@@ -114,9 +114,11 @@ All that's needed is to add the
 `by=group` to the command.
 
 ```R
-dat[group %in% c('A','E','I','O','U')]              # Reminder: %in% to match a set
+# Reminder: %in% to match a set
+dat[group %in% c('A','E','I','O','U')]
 
-dat[group %in% c('A','E','I','O','U'), sd(count), by=group]   # then calculate sd on count
+# then calculate sd on count
+dat[group %in% c('A','E','I','O','U'), sd(count), by=group]   
 ```
 
 
@@ -126,7 +128,7 @@ vowels <- c('A','E','I','O','U')
 dat[group %in% vowels, list('SD'=sd(count)), by=group]
 
 # .() is equivalent to list()
-dat[group %in% vowels, .('SD'=sd(count)), by=group]     
+dat[group %in% vowels, .('SD'=sd(count)), by=group]
 ```
 
 </details>

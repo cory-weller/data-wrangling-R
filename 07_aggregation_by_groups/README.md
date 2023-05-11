@@ -59,7 +59,7 @@ dat.groups <- data.table(
 )
 
 dat.outcomes <- data.table(
-    'PatientID'=sample(dat1$PatientID, size=40),
+    'PatientID'=sample(dat.groups$PatientID, size=40),
     'Outcome'=sample(0:1, size=40, replace=TRUE)
 )
 

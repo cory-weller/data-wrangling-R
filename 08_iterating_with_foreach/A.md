@@ -74,7 +74,7 @@ There are near-infinite uses for this function, with the only requirement
 being it needs to return a `data.table` for every iteration.
 
 
-## On your own: splitting strings with `tstrsplit`
+## Splitting strings with `tstrsplit`
 
 While the `filename` column does differentiate the four batches, it's
 less intuitive than simply having a column with `1` `2` `3` or `4`. We
