@@ -4,6 +4,11 @@ Data is commonly referred to as being in *wide* or *long* formats, even if it co
 information. As expected, long-format data has many rows and few columns. Wide-format data contains
 many columns.
 
+The difference between long and wide is demonstrated here:
+
+![](/assets/wide-v-long.png)
+
+
 Examples of the same data, represented in wide and long formats:
 ```R
 dat.wide <- fread('rna_seq_sample.tsv')

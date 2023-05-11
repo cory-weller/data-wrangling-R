@@ -8,6 +8,12 @@ third category, known as `by`.
 By including `by` in our `data.table` command, we can automatically
 perform operations separately for different groups.
 
+Functionally, when you include a column in `by`, every other operation
+specified in the `data.table` command will be conducted on a subset of
+the data:
+
+![](/assets/group-by.png)
+
 ## Counting groups by `.N`
 
 One of the most common tasks is counting occurrences per group, such as:

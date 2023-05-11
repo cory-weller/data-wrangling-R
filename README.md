@@ -40,3 +40,5 @@
 
 ## [Iterating with Foreach](08_iterating_with_foreach/README.md)
 * [Combining multiple data sets](08_iterating_with_foreach/A.md)
+
+## [Iterating with Foreach](09_final_notes/README.md)

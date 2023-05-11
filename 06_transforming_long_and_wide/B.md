@@ -25,7 +25,7 @@ rows with a count of 0 have been excluded!
 ## Transform to wide with `dcast`
 The following image illustrates the structure of a `dcast` formula:
 
-![](../dcast-illustration.png)
+![](/assets/dcast-illustration.png)
 
 * Things that remain how they are (as columns) go to the left of `~`
 * The column containing a group variable, each of which make a new
