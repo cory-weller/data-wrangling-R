@@ -137,9 +137,9 @@ vcf.wide <- dcast(vcf.long, ID~variable, value.var='value')
 
 # Calculate Chi-square statistic for every position,
 # SUM of (Obs-Exp)^2 / Exp 
-vcf.stats <- vcf.wide[, list('X'=sum(observed-expected)), 
-                        by=list(CHROM,POS)]
-
+vcf.wide[, X := (observed-expected)**2]
+vcf.wide[, X := X / expected]
+vcf.stats <- vcf.wide[, list('X'=sum(X)), by=list(ID,genotype)]
 vcf.stats[, 'p' := pchisq(X, df=1, lower.tail=FALSE)]
 
 # Assign vector of significance
