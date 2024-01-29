@@ -1,27 +1,17 @@
-# Installation and setup
+# Setup
 
-This section goes over how to launch an interactive `R` session in your
-terminal. You will need this repository on your local machine, as it
-contains a few demo files.
+I assume you already have access to `R` terminal, `RStudio`, or `Jupyter` notebook.
 
-<details><summary>Retrieve repository as direct download</summary>
-<br>
-
-Download this [`zip` file](https://github.com/cory-weller/data-wrangling-R/archive/refs/heads/main.zip)
-and unzip the `data-wrangling-R-main` folder into a location you can
-remember.  You will need to open this target location within `R` or `Rstudio`.
-
-</details>
-<br>
-<details><summary>Retrieve repository using git clone</summary>
-<br>
+To retrieve this repository's material by direct download, download this 
+[`zip` archive](https://github.com/cory-weller/data-wrangling-R/archive/refs/heads/main.zip)
+and unzip the `data-wrangling-R-main` folder into a location you can remember.
+You will need to open this target location within `R` or `Rstudio`.
 
 If `git` is installed on your machine (i.e. Mac and linux users):
 ```bash
 # while you are alrady in the directory you want to download to
 git clone https://github.com/cory-weller/data-wrangling-R.git
 ```
-</details>
 
 ---
 
@@ -32,33 +22,19 @@ everything can be done entirely with text entered at the command-line
 interface within a terminal (or executed by telling `R` to execute a
 pre-written text file, or `Rscript`).
 
-While `Rstudio` can be nice, it adds an additional layer of abstraction
-which can be distracting, or make it less clear exactly what is happening
-within `R`. For that reason, I'll be using only the console (along with
-a plain text editor). This console is equivalent to the lower-left window
+While `Rstudio` can be nice, it does add an additional layer of abstraction 
+which can be distracting or make it less clear exactly what is happening
+within `R`. This console is equivalent to the lower-left window
 within a typical `Rstudio` setup.
 
-<details><summary>R studio window</summary>
-
-![](/assets/rstudio-windows.png)
-</details>
-
-<details><summary>VS code window</summary>
-
-![](/assets/vscode-window.png)
-</details>
-
----
-
-## If you don't have Biowulf access
 You should be able to follow along and run the commands within this
 tutorial in any `R` or `Rstudio` setting so long as the required packages
-are installed. I'm working in `R` version `4.2.2` with the most recent
+are installed. I most recently tested with `R` version `4.3` with the most recent
 version of `data.table` and `foreach`. You will need to manually retrieve
 this repository and make sure your `Rstudio` working directory is set
 to the top level of said repository.
 
-**NEW!** Check below for running `R` on Google Colab as a Jupyter notebook
+**Google colab users:** check below for running `R` on Google Colab as a Jupyter notebook
 
 <details><summary>Google Colab setup</summary>
 
